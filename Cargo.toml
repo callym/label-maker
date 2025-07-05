@@ -7,8 +7,6 @@ version = "0.1.0"
 axum = { version = "0.8", features = ["macros", "multipart"] }
 dotenvy = "0.15"
 image = "0.25"
-localip = "0.2.1"
-mdns-sd = "0.13.10"
 palette = "0.7.6"
 ptouch-rs = { version = "0.2", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
