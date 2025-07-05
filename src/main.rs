@@ -1,5 +1,3 @@
-#![feature(async_trait_bounds)]
-
 use std::io::Cursor;
 
 use axum::{
