@@ -1,0 +1,17 @@
+@use 'base.scss';
+
+.o-button.active {
+  .o-button__label {
+    font-weight: bold;
+  }
+
+  .o-icon {
+    svg {
+      stroke-width: 15%;
+    }
+  }
+}
+
+.o-field__horizontal-label {
+  align-self: center;
+}

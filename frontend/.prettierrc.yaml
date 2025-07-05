@@ -1,0 +1,23 @@
+plugins:
+  - "@trivago/prettier-plugin-sort-imports"
+  - prettier-plugin-css-order
+
+semi: true
+singleQuote: true
+trailingComma: all
+
+importOrder:
+  - ^(?:@)?vue(?:\/)?(.*)$
+  - <THIRD_PARTY_MODULES>
+  - ^@\/(?:(?!assets\/))(.*)$
+  - ^@\/assets\/(.*)$
+  - "^[./]"
+importOrderSeparation: true
+importOrderSortSpecifiers: true
+
+overrides:
+  - files: "*.css"
+    options:
+      parser: scss
+
+cssDeclarationSorterOrder: smacss

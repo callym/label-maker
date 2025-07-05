@@ -1,0 +1,38 @@
+@use 'reset.scss';
+@use 'fonts.scss';
+@use '@oruga-ui/theme-oruga/dist/scss/oruga-build.scss' as oruga with (
+  $base-font-family: fonts.$serif-font-family,
+  $base-border-radius: 0,
+  $sizes: (
+    'small': 1rem,
+    'medium': 2rem,
+    'large': 5rem,
+  ),
+  $button-color: white,
+  $primary: palegreen,
+  $info: cornflowerblue,
+  $danger: crimson
+);
+
+:root {
+  --oruga-field-label-color: white;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-style: italic;
+  font-size: 3em;
+  text-align: center;
+}
+
+h2 {
+  font-style: italic;
+  font-size: 2em;
+  text-align: center;
+}

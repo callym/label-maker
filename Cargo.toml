@@ -1,0 +1,22 @@
+[package]
+edition = "2024"
+name = "label-maker"
+version = "0.1.0"
+
+[dependencies]
+axum = { version = "0.8", features = ["macros", "multipart"] }
+dotenvy = "0.15"
+image = "0.25"
+localip = "0.2.1"
+mdns-sd = "0.13.10"
+palette = "0.7.6"
+# ptouch-rs = "0.1"
+ptouch-rs = { path = "../ptouch-rs", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "2.0.12"
+tokio = { version = "1.46", features = ["full", "macros"] }
+tower = "0.5.2"
+tower-http = { version = "0.6", features = ["cors", "fs"] }
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1.17.0", features = ["serde", "v7"] }
