@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - image: callym/label-maker-frontend
+          - image: ghcr.io/callym/label-maker-frontend
             dockerfile: Dockerfile.frontend
-          - image: callym/label-maker-backend
+          - image: ghcr.io/callym/label-maker-backend
             dockerfile: Dockerfile.backend
     steps:
       -
