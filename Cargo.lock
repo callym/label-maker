@@ -1330,6 +1330,8 @@ dependencies = [
 [[package]]
 name = "ptouch-rs"
 version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "031148aab5438ad8250fdba1acc607b9026072b04ab9aa231bd06f123159548c"
 dependencies = [
  "bitvec",
  "enumflags2",
