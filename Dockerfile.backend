@@ -16,7 +16,6 @@ RUN rm src/*.rs
 COPY ./src ./src
 
 # build for release
-RUN rm ./target/release/deps/label-maker*
 RUN cargo build --release
 
 # our final base
