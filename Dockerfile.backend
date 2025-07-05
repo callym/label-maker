@@ -10,11 +10,15 @@ COPY ./Cargo.toml ./Cargo.toml
 
 # this build step will cache your dependencies
 RUN cargo build --release
-RUN rm src/*.rs
+RUN rm -rf src
 
 # copy your source tree
 COPY ./src ./src
-RUN rm -rf target
+
+RUN rm -rf target/label-maker*
+RUN rm -rf target/release/label-maker*
+RUN rm -rf target/release/.fingerprint/label-maker*
+RUN rm -rf target/release/deps/label-maker*
 
 # build for release
 RUN cargo build --release
