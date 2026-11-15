@@ -19,6 +19,8 @@ async function submit() {
   const image = await Image.text(text.value);
 
   emit('upload', image);
+
+  text.value = '';
 }
 </script>
 
