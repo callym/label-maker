@@ -81,11 +81,6 @@ impl CosmicTextRenderer {
         db.load_font_data(font);
       }
 
-      for face in db.faces() {
-        dbg!(&face.families);
-        dbg!(&face.style);
-      }
-
       db
     });
 

@@ -44,7 +44,6 @@ impl Image {
   }
 
   pub fn set_inverted(&mut self, inverted: bool, status: Status) {
-    println!("Setting inverted from {} to {}", self.inverted, inverted);
     self.inverted = inverted;
 
     self.processed_file = Image::process(
