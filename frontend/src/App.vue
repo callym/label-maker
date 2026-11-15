@@ -6,6 +6,7 @@ import ImageList from '@/components/ImageList.vue';
 import Upload from '@/components/ImageUpload.vue';
 import PrinterInfo from '@/components/PrinterInfo.vue';
 
+import Text from './components/Text.vue';
 import { CacheBust } from './utils/cache_buster';
 
 const bust = new CacheBust();
@@ -61,7 +62,10 @@ async function print() {
     ></PrinterInfo>
   </header>
   <div id="content">
-    <Upload @upload="add_image" />
+    <div class="add-image">
+      <Text @upload="add_image" />
+      <Upload @upload="add_image" />
+    </div>
 
     <ImageList
       v-if="image_arr.length > 0"
@@ -101,6 +105,16 @@ async function print() {
 <style lang="scss" scoped>
 header {
   margin-bottom: 0.75rem;
+}
+
+.add-image {
+  display: grid;
+  grid: 'text image' / auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  padding: 1em;
+  gap: 1em;
 }
 
 .image-list {

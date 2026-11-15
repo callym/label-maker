@@ -25,6 +25,13 @@ pub struct Image {
 }
 
 impl Image {
+  pub fn calculate_length_mm(width: u32, printer_ty: PrinterType) -> u32 {
+    let length_inch = (width as f32) / (printer_ty.info().dpi as f32);
+    let length_mm = length_inch * 25.4;
+
+    length_mm as u32
+  }
+
   pub fn set_threshold(&mut self, threshold: u8, status: Status) {
     self.threshold = threshold;
 
@@ -48,7 +55,7 @@ impl Image {
     );
   }
 
-  fn process(
+  pub fn process(
     image: impl Into<DynamicImage>,
     status: Status,
     threshold: u8,
@@ -131,9 +138,7 @@ impl Image {
     let width = original_file.width();
     let height = original_file.height();
 
-    let length_inch = (width as f32) / (printer_ty.info().dpi as f32);
-    let length_mm = length_inch * 25.4;
-    let length_mm = length_mm as u32;
+    let length_mm = Self::calculate_length_mm(width, printer_ty);
 
     let processed_file = Image::process(original_file.clone(), status, 127, false);
 

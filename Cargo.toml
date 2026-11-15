@@ -5,6 +5,7 @@ version = "0.1.0"
 
 [dependencies]
 axum = { version = "0.8", features = ["macros", "multipart"] }
+cosmic-text = "0.19"
 dotenvy = "0.15"
 image = "0.25"
 palette = "0.7.6"

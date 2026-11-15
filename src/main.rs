@@ -17,6 +17,7 @@ use tower_http::{
 
 mod image;
 mod state;
+mod text;
 
 use ::image::ImageFormat;
 use image::Image;
@@ -47,6 +48,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     ServeDir::new("frontend/dist").not_found_service(ServeFile::new("frontend/dist/index.html"));
 
   let router = Router::new()
+    .route("/text", post(text::new_text))
     .route("/images", get(get_images))
     .route("/images", post(new_image))
     .route("/images", delete(delete_all))

@@ -80,7 +80,10 @@ impl AppState {
   }
 
   pub fn add_image(&self, image: Image) -> Uuid {
-    let id = Uuid::now_v7();
+    self.add_image_with_id(image, Uuid::now_v7())
+  }
+
+  pub fn add_image_with_id(&self, image: Image, id: Uuid) -> Uuid {
     self.images.write().unwrap().insert(id, image);
     id
   }

@@ -74,6 +74,12 @@ export class Image {
     return new Image(res.data);
   }
 
+  static async text(text: string) {
+    const res = await client.post(`/text`, { text });
+
+    return new Image(res.data);
+  }
+
   async delete() {
     await client.delete(this.url);
   }
