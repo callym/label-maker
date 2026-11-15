@@ -138,9 +138,9 @@ impl Image {
     let width = original_file.width();
     let height = original_file.height();
 
-    let length_mm = Self::calculate_length_mm(width, printer_ty);
-
     let processed_file = Image::process(original_file.clone(), status, 127, false);
+
+    let length_mm = Self::calculate_length_mm(processed_file.width(), printer_ty);
 
     Ok(Image {
       file_name,

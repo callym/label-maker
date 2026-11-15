@@ -31,8 +31,6 @@ pub async fn new_text(
 ) -> Json<ImageWithId> {
   let id = Uuid::now_v7();
 
-  let file_name = id.to_string();
-
   let original_file = CosmicTextRenderer::new().render(&new_text.text);
 
   let width = original_file.width();
@@ -46,7 +44,7 @@ pub async fn new_text(
   let processed_file = Image::process(original_file.clone(), status, 127, false);
 
   let image = Image {
-    file_name,
+    file_name: String::new(),
     width,
     height,
     original_width: width,
