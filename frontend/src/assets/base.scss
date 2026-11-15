@@ -1,17 +1,24 @@
+$primary: palegreen;
+$info: cornflowerblue;
+$danger: crimson;
+
 @use 'reset.scss';
 @use 'fonts.scss';
-@use '@oruga-ui/theme-oruga/dist/scss/oruga-build.scss' as oruga with (
-  $base-font-family: fonts.$serif-font-family,
-  $base-border-radius: 0,
+@use '@oruga-ui/theme-oruga/dist/scss/theme-build.scss' as oruga with (
+  $font-family: fonts.$serif-font-family,
+  $border-radius: 0,
   $sizes: (
     'small': 1rem,
     'medium': 2rem,
     'large': 5rem,
   ),
   $button-color: white,
-  $primary: palegreen,
-  $info: cornflowerblue,
-  $danger: crimson
+  $button-background-color: transparent,
+  $primary: $primary,
+  $info: $info,
+  $danger: $danger,
+  $upload-draggable-background-color: transparent,
+  $upload-draggable-hover-background-color: rgba($info, 0.25)
 );
 
 :root {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { Icon as LucideIcon } from 'lucide-vue-next';
+import { Icon as LucideIcon } from '@lucide/vue';
 import { P, match } from 'ts-pattern';
 
 import { type Size, icons } from '@/utils/icons';

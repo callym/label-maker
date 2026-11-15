@@ -16,14 +16,14 @@ defineEmits<{ delete: [Image]; refresh: [Image] }>();
       :image="image"
       @delete="$emit('delete', image)"
       @refresh="$emit('refresh', image)"
-    ></ImageView>
+    />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .images {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 25fr [col-start]);
   gap: 1em;
 }
 

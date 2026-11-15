@@ -44,6 +44,8 @@ async function submit() {
 }
 
 .o-button {
+  --oruga-button-hover-background-color: alpha(from var(--oruga-info) / 0.25);
+
   border-top-right-radius: 0.5em;
 }
 

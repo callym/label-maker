@@ -86,4 +86,8 @@ function width(): string {
 .refresh {
   grid-area: refresh;
 }
+
+.o-button {
+  --oruga-button-hover-background-color: alpha(from var(--oruga-info) / 0.25);
+}
 </style>

@@ -166,5 +166,9 @@ header {
   font-style: italic;
   font-weight: bolder;
   font-size: 3em;
+
+  --oruga-button-hover-background-color: alpha(
+    from var(--oruga-primary) / 0.25
+  );
 }
 </style>

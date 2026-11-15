@@ -8,13 +8,13 @@ axum = { version = "0.8", features = ["macros", "multipart"] }
 cosmic-text = "0.19"
 dotenvy = "0.15"
 image = "0.25"
-palette = "0.7.6"
+palette = "0.7"
 ptouch-rs = { version = "0.2", features = ["serde"] }
 serde = { version = "1.0", features = ["derive"] }
-thiserror = "2.0.12"
+thiserror = "2.0"
 tokio = { version = "1.46", features = ["full", "macros"] }
-tower = "0.5.2"
-tower-http = { version = "0.6", features = ["cors", "fs"] }
+tower = "0.5"
+tower-http = { version = "0.7", features = ["cors", "fs"] }
 tracing = { version = "0.1", features = ["log"] }
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-uuid = { version = "1.17.0", features = ["serde", "v7"] }
+uuid = { version = "1.17", features = ["serde", "v7"] }

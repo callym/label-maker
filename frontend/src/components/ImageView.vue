@@ -63,16 +63,25 @@ watch(bust.bust, () => emit('refresh', props.image));
       </o-field>
     </div>
     <section class="info">
-      <o-field label="Filename" horizontal>
-        {{ image.file_name }}
-      </o-field>
-      <o-field label="Dimensions" horizontal>
-        {{ image.length_mm.toFixed(0) }}mm
-      </o-field>
-      <o-field label="Pixels" horizontal>
-        {{ image.original_dimensions.width }} &times;
-        {{ image.original_dimensions.height }}
-      </o-field>
+      <template v-if="image.file_name">
+        <div class="label">Filename</div>
+        <div class="value">
+          <o-tooltip class="filename" :label="image.file_name" teleport>
+            {{ image.file_name }}
+          </o-tooltip>
+        </div>
+      </template>
+      <template v-if="image.length_mm">
+        <div class="label">Dimensions</div>
+        <div class="value">{{ image.length_mm.toFixed(0) }}mm</div>
+      </template>
+      <template v-if="image.original_dimensions">
+        <div class="label">Pixels</div>
+        <div class="value">
+          {{ image.original_dimensions.width }} &times;
+          {{ image.original_dimensions.height }}
+        </div>
+      </template>
     </section>
     <o-button
       class="delete"
@@ -94,10 +103,13 @@ watch(bust.bust, () => emit('refresh', props.image));
     'info info' min-content
     'controls controls' min-content
     / 1fr 1fr;
-  align-items: center;
-  padding: 1em;
-  border: 1px solid var(--oruga-primary);
 
+  row-gap: var(--oruga-field-margin-bottom);
+  align-items: center;
+  min-width: 0;
+  padding: 1em;
+  overflow: hidden;
+  border: 1px solid var(--oruga-primary);
   border-top-right-radius: 1em;
   border-bottom-left-radius: 1em;
 
@@ -127,6 +139,10 @@ watch(bust.bust, () => emit('refresh', props.image));
   .delete {
     grid-column: 1 / 3;
     margin-top: 1em;
+
+    --oruga-button-hover-background-color: alpha(
+      from var(--oruga-danger) / 0.25
+    );
   }
 
   .invert {
@@ -134,6 +150,48 @@ watch(bust.bust, () => emit('refresh', props.image));
 
     align-items: center;
     justify-content: space-between;
+
+    gap: 1em;
+
+    .o-button {
+      --oruga-button-hover-background-color: alpha(
+        from var(--oruga-info) / 0.25
+      );
+    }
+  }
+}
+
+.o-button {
+  border-top-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+:deep(.o-field) {
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+.label {
+  padding-right: var(--oruga-control-spacer);
+  color: var(--oruga-font-color);
+  font-weight: 600;
+  text-align: right;
+}
+
+.value {
+  &:has(.filename) {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.o-tooltip {
+  display: inline;
+
+  & :deep(.o-tooltip__trigger) {
+    display: inline;
   }
 }
 </style>

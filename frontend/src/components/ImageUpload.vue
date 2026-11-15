@@ -41,7 +41,7 @@ async function new_file(files?: File[]) {
 </template>
 
 <style lang="scss" scoped>
-:deep(.o-upload__draggable) {
+:deep(.o-upload__dragzone) {
   border-top-right-radius: 1em;
   border-bottom-left-radius: 1em;
   border-color: var(--oruga-info);
